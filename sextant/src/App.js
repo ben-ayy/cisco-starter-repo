@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TitleBanner />
+      <ExhibitComponent heading="Public IP" >
+        <p>192.168.0.30:3000</p>
+      </ExhibitComponent>
+    </div>
+  );
+}
+
+function TitleBanner() {
+  return(<h1>
+    Sextant
+  </h1>);
+}
+
+function ExhibitComponent(props) {
+  return(
+    <div>
+      <h2>{ props.heading }</h2>
+      <div>
+        {props.children}
+      </div>
     </div>
   );
 }
