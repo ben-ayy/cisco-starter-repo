@@ -14,11 +14,8 @@ class PacketLatency extends Component {
         webSocket.onmessage = (event) => {
             let currentPacket = event.data;
             let currentTime = new Date().getTime();
-            console.log(" Current: " + currentTime);
-            console.log("Packet: " + currentPacket);
-            let latency = currentPacket - currentTime;
+            let latency = currentTime - currentPacket;
             this.setState({ packetLatency: (latency === null) ? 0 : latency});
-            console.log("Diff: " + this.state.packetLatency);
         }
     }
 
