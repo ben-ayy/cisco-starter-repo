@@ -1,11 +1,16 @@
+import React, { Component } from 'react';
 import './App.css';
+import AddressDisplay from './AddressDisplay';
 
 function App() {
   return (
     <div className="App">
       <TitleBanner />
       <ExhibitComponent heading="Public IP" >
-        <p>192.168.0.30:3000</p>
+        <div>
+        <AddressDisplay url="https://api.ipify.org?format=json"/>
+        </div>
+        <AddressDisplay url="https://api64.ipify.org?format=json"/>
       </ExhibitComponent>
     </div>
   );
@@ -27,5 +32,7 @@ function ExhibitComponent(props) {
     </div>
   );
 }
+
+
 
 export default App;
