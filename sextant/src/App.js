@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import AddressDisplay from './AddressDisplay';
+import PacketLatency from './PacketLatency';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <AddressDisplay url="https://api.ipify.org?format=json"/>
         </div>
         <AddressDisplay url="https://api64.ipify.org?format=json"/>
+      </ExhibitComponent>
+      <ExhibitComponent heading="Latency" >
+        <PacketLatency url="ws://localhost:55455" />
       </ExhibitComponent>
     </div>
   );
